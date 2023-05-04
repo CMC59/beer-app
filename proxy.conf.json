@@ -1,0 +1,7 @@
+{
+    "/biere": {
+        "target": "https://api-beer.vercel.app",
+        "secure": true,
+        "changeOrigin": true
+    }
+}

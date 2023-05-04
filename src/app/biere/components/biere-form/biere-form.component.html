@@ -1,0 +1,61 @@
+<h2 mat-dialog-title>{{title}}</h2>
+
+<form [formGroup]="biereForm" (ngSubmit)="onSubmit()">
+    <div class="form">
+        <mat-form-field appearance="outline">
+            <mat-label>identifiant</mat-label>
+            <input matInput formControlName="id" readonly />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" />
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+            <mat-label>Degree</mat-label>
+            <mat-select formControlName="degree">
+                <mat-option *ngFor="let deg of degree" [value]="deg">
+                    {{deg}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Couleur</mat-label>
+            <mat-select formControlName="couleur">
+                <mat-option *ngFor="let coul of couleur" [value]="coul">
+                    {{coul}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Amertume</mat-label>
+            <mat-select formControlName="amertume">
+                <mat-option *ngFor="let amert of amertume" [value]="amert">
+                    {{amert}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Departement</mat-label>
+            <mat-select formControlName="class">
+                <mat-option *ngFor="let dep of class" [value]="dep">
+                    {{dep}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+    </div>
+
+
+    <mat-dialog-actions align="end">
+        <button mat-button type="button" mat-dialog-close>Annuler</button>
+        <button mat-raised-button type="submit" cdkFocusInitial color="warn"
+            [disabled]="!biereForm.valid || !biereForm.dirty">{{submitBtnName}}</button>
+    </mat-dialog-actions>
+</form>

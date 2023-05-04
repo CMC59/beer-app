@@ -1,0 +1,6 @@
+<!--<p>biere-details works!</p>-->
+{{biere$ | async | json}}
+<button (click)="backClicked()" mat-fab color="primary" aria-label="gobackbutton">
+    <mat-icon>arrow_back</mat-icon>
+</button>
+<app-biere-card [selectedBiere]="biere$ | async" (received)="showReceivedValue($event)"></app-biere-card>
